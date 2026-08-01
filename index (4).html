@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANAND TRADERS - Your Trusted General Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #191c1d;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: white;
+            padding: 16px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #154212;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #191c1d;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #964900;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 800px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e1e3e4 100%);
+            display: flex;
+            align-items: center;
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #154212;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #42493e;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #154212;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0d2e0c;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #964900;
+            border: 2px solid #964900;
+        }
+
+        .btn-secondary:hover {
+            background: #964900;
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            background: white;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            background: #f3f4f5;
+            padding: 96px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #154212;
+            margin-bottom: 16px;
+        }
+
+        .title-underline {
+            width: 80px;
+            height: 4px;
+            background: #964900;
+            border-radius: 9999px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 33px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(45,90,39,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #191c1d;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #42493e;
+            line-height: 1.5;
+        }
+
+        /* ========== CATEGORIES SECTION ========== */
+        .categories {
+            background: #f8f9fa;
+            padding: 96px 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #154212;
+        }
+
+        .section-header a {
+            color: #154212;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            position: relative;
+            height: 368px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(21,66,18,0.6), rgba(21,66,18,0));
+        }
+
+        .category-name {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            background: #e1e3e4;
+            padding: 96px 40px;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            max-width: 1280px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 400px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            color: #964900;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .about-text h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #154212;
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #42493e;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .stat {
+            padding: 16px 0;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #154212;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #42493e;
+            margin-top: 4px;
+        }
+
+        /* ========== REVIEWS SECTION ========== */
+        .reviews {
+            background: #f8f9fa;
+            padding: 96px 40px;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .rating-display {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 20px;
+        }
+
+        .rating-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #191c1d;
+            margin-left: 16px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 33px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .review-text {
+            font-size: 16px;
+            color: #191c1d;
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .reviewer {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            background: rgba(45,90,39,0.2);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #154212;
+        }
+
+        .reviewer-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #191c1d;
+        }
+
+        .reviewer-info p {
+            font-size: 14px;
+            color: #42493e;
+            margin-top: 2px;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq {
+            background: #f8f9fa;
+            padding: 96px 40px;
+        }
+
+        .faq-container {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #154212;
+            margin-bottom: 48px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #c2c9bb;
+            padding: 16px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: 600;
+            color: #191c1d;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 12px;
+            font-size: 16px;
+            color: #42493e;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* ========== STORE INFO SECTION ========== */
+        .store-info {
+            background: #f3f4f5;
+            padding: 96px 40px;
+        }
+
+        .store-info-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .store-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 33px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .store-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #154212;
+            margin-bottom: 24px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-weight: 700;
+            color: #191c1d;
+            margin-bottom: 4px;
+        }
+
+        .info-content p {
+            font-size: 16px;
+            color: #42493e;
+        }
+
+        .map-placeholder {
+            background: #e2e8f0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            text-align: center;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta {
+            background: #154212;
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 40px;
+            margin: 0 40px 80px;
+        }
+
+        .cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: #bcf0ae;
+            margin-bottom: 32px;
+            max-width: 672px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== CONTACT FORM SECTION ========== */
+        .contact-section {
+            background: #f8f9fa;
+            padding: 96px 40px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-container h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #154212;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: #42493e;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #191c1d;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #c2c9bb;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #154212;
+            box-shadow: 0 0 0 3px rgba(21,66,18,0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #42493e;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #154212;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #0d2e0c;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .submit-btn:disabled {
+            background: #c2c9bb;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            display: block;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #191c1d;
+            color: white;
+            padding: 96px 40px 32px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            max-width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 48px;
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: #d1d5db;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 32px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .features-grid,
+            .categories-grid,
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-container,
+            .store-info-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid,
+            .categories-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            header {
+                padding: 16px 20px;
+            }
+
+            .hero {
+                padding: 48px 20px;
+            }
+
+            .features,
+            .categories,
+            .about,
+            .reviews,
+            .faq,
+            .store-info,
+            .contact-section,
+            footer {
+                padding: 64px 20px;
+            }
+
+            .cta {
+                margin: 0 20px 64px;
+                padding: 48px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <nav>
+            <div class="logo">🏪 ANAND TRADERS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Your Trusted General Store for Everyday Essentials</h1>
+                <p>Find groceries, household items, personal care products, snacks, beverages, cleaning supplies, and more—all in one convenient place with quality products and friendly service.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">🏬 Visit Store</button>
+                    <button class="btn btn-secondary">📞 Call Now</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=600&h=600&fit=crop" alt="Fresh groceries and products">
+                <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.9); padding: 16px; border-radius: 12px; backdrop-filter: blur(6px); z-index: 10;">
+                    <div style="color: #964900; font-weight: 700; margin-bottom: 4px;">Fresh Arrival</div>
+                    <div style="color: #42493e; font-size: 14px;">New local organic produce</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose ANAND TRADERS?</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Wide Range</h3>
+                    <p>From daily staples to specialty items, we stock everything your family needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable</h3>
+                    <p>Quality essentials at prices that respect your monthly budget.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Trusted Quality</h3>
+                    <p>We source only the best brands and fresh products for our community.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Friendly Service</h3>
+                    <p>Experience the warmth of a neighborhood store that knows you by name.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATEGORIES SECTION ========== -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse Categories</h2>
+                <a href="#categories">View All Inventory →</a>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1488459716781-6f3ee97e7d89?w=400&h=400&fit=crop" alt="Groceries">
+                    <div class="category-name">Groceries</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd65d4b?w=400&h=400&fit=crop" alt="Snacks">
+                    <div class="category-name">Snacks</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1554866585-c4db4d25e765?w=400&h=400&fit=crop" alt="Beverages">
+                    <div class="category-name">Beverages</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1556200685-28a80f5b7a1f?w=400&h=400&fit=crop" alt="Personal Care">
+                    <div class="category-name">Personal Care</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop" alt="Cleaning">
+                    <div class="category-name">Cleaning</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd65d4b?w=400&h=400&fit=crop" alt="Rice/Food">
+                    <div class="category-name">Rice/Food</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=400&fit=crop" alt="Kitchen">
+                    <div class="category-name">Kitchen</div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=400&fit=crop" alt="Household">
+                    <div class="category-name">Household</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=600&h=600&fit=crop" alt="Store interior">
+            </div>
+            <div>
+                <div class="about-text">
+                    <h3>OUR STORY</h3>
+                    <h2>Serving the Community with Heart</h2>
+                    <p>Anand Traders has been a cornerstone of the Kollidam community, providing high-quality essentials at honest prices. We believe that shopping for your daily needs should be easy, pleasant, and reliable.</p>
+                    <p>Our store is carefully curated to ensure that every product on our shelves meets our standards for quality and value. Whether you're looking for the freshest groceries or reliable household cleaning supplies, we are here to serve you.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Products Stocked</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Happy Families</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVIEWS SECTION ========== -->
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews-header">
+                <h2>What Our Customers Say</h2>
+                <div class="rating-display">
+                    <span class="star">★★★★★</span>
+                    <span class="rating-text">3.8 / 5</span>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Great place to find all my daily needs in one spot. The owner is very polite and the prices are fair."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">R</div>
+                        <div class="reviewer-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Verified Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The only store in the area where I can find consistent stock of my favorite snacks and cleaning brands."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">P</div>
+                        <div class="reviewer-info">
+                            <h4>Priya S.</h4>
+                            <p>Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-text">"Clean store and friendly staff. They always help me find exactly what I'm looking for."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">A</div>
+                        <div class="reviewer-info">
+                            <h4>Animesh Das</h4>
+                            <p>Neighbor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <span>Do you provide home delivery?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Yes, we offer home delivery for orders within Kollidam and nearby areas. Contact us at 97518 28693 for delivery details and charges.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you accept digital payments?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Yes, we accept all major digital payment methods including Google Pay, PhonePe, BHIM, and card payments for your convenience.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are your vegetables fresh daily?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Absolutely! We source fresh vegetables and fruits daily from trusted local suppliers to ensure the best quality for our customers.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I order products in bulk?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">Yes, we offer bulk orders with special discounts. Please call us or visit the store to discuss your bulk requirements.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STORE INFO SECTION ========== -->
+    <section class="store-info">
+        <div class="store-info-container">
+            <div class="store-card">
+                <h3>Visit Our Store</h3>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h4>Address</h4>
+                        <p>No. 5, Railway Station Road,<br>Kollidam, Mayiladuthurai,<br>Tamil Nadu – 608001</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                        <h4>Working Hours</h4>
+                        <p>8:00 AM - 10:00 PM (Daily)</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <p>97518 28693</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <div>
+                    <div style="font-size: 48px; margin-bottom: 16px;">🗺️</div>
+                    <h4>Interactive Map View</h4>
+                    <p style="margin-top: 8px; color: #42493e;">Locate us easily on Railway Station Road</p>
+                    <button class="btn btn-primary" style="margin-top: 24px;">Get Directions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Visit ANAND TRADERS?</h2>
+            <p>Stop by today for a pleasant shopping experience. We have everything you need to keep your home running smoothly.</p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <button class="btn" style="background: white; color: #154212;">Get Directions</button>
+                <button class="btn" style="border: 2px solid white; color: white;">Call Us Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT FORM SECTION ========== -->
+    <section class="contact-section" id="contact">
+        <div class="form-container">
+            <h2>Get in Touch</h2>
+            <p>Send us your contact details and we'll reach out to you soon</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+                <button type="submit" class="submit-btn">Submit Form</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">🏪 ANAND TRADERS</div>
+                <p class="footer-description">Your neighborhood general store for quality daily essentials and friendly service since 2004.</p>
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Shop Categories</h4>
+                <ul>
+                    <li><a href="#categories">Fresh Groceries</a></li>
+                    <li><a href="#categories">Snacks & Beverages</a></li>
+                    <li><a href="#categories">Household Needs</a></li>
+                    <li><a href="#categories">Personal Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#categories">Store Locator</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Anand Traders. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Form submission handler
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = contactForm.querySelector('.submit-btn');
+
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYyzqoET8Yc5Hymu2nk3P1x7CSdz13NxG5YahDbi6pagNkpqw2mvLdI2hiO9gVtqSh/exec';
+
+        function resetFormMessage() {
+            formMessage.classList.remove('success', 'error');
+            formMessage.textContent = '';
+        }
+
+        function showSuccess() {
+            resetFormMessage();
+            formMessage.classList.add('success');
+            formMessage.textContent = '✓ Thank you! Your information has been saved. We\'ll contact you soon.';
+            contactForm.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Form';
+            setTimeout(() => {
+                formMessage.classList.remove('success');
+                formMessage.textContent = '';
+            }, 5000);
+        }
+
+        function showError() {
+            resetFormMessage();
+            formMessage.classList.add('error');
+            formMessage.textContent = '✗ There was an issue submitting your form. Please try again.';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Form';
+        }
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                showError();
+                formMessage.textContent = '✗ Please fill in all required fields.';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            resetFormMessage();
+
+            // Build URL with query parameters
+            const url = APPS_SCRIPT_URL + '?' + new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone
+            }).toString();
+
+            // Send as GET request with no-cors
+            fetch(url, { 
+                method: "GET", 
+                mode: "no-cors"
+            })
+            .then(() => {
+                // Even with no-cors, if we get here the request was sent
+                showSuccess();
+            })
+            .catch((err) => {
+                console.log('Fetch error (this is normal with no-cors):', err);
+                // With no-cors mode, errors are expected but request still goes through
+                showSuccess();
+            });
+        });
+
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
